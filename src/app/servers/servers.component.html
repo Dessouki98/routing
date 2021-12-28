@@ -1,0 +1,19 @@
+<div class="row">
+  <button class="btn btn-primary" (click)="reloadServer()">relaod</button>
+  <div class="col-12 col-sm-4 order-2 col-sm-order-1">
+    <div class="list-group">
+      <a
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-12 col-sm-4 order-2 col-sm-order-1">
+    <app-edit-server></app-edit-server>
+    <hr>
+    <app-server></app-server>
+  </div>
+</div>
+
