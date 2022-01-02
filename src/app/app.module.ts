@@ -9,11 +9,8 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
-import {RouterModule} from '@angular/router';
-const appRoutes = [{path: '', component: HomeComponent},
-  {path: 'users', component: UserComponent},
-  {path: 'users/:id/:name', component: UserComponent},
-  {path: 'servers', component: ServersComponent}];
+import { PageNotFoungComponent } from './page-not-foung/page-not-foung.component';
+import {AppRoutingModule} from './app-routing-module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +19,13 @@ const appRoutes = [{path: '', component: HomeComponent},
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    PageNotFoungComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
