@@ -9,8 +9,9 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
-import { PageNotFoungComponent } from './page-not-foung/page-not-foung.component';
 import {AppRoutingModule} from './app-routing-module';
+import {AuthService} from './auth.service';
+import {AuthGuardService} from './auth-guard-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +21,14 @@ import {AppRoutingModule} from './app-routing-module';
     UserComponent,
     EditServerComponent,
     ServerComponent,
-    PageNotFoungComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
